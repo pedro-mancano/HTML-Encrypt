@@ -25,7 +25,7 @@
     this.jsonToElement = (value, parent) => {
         if(Array.isArray(value)){
             for(var v in value){
-                jsonToElement(value[v], parent);
+                this.jsonToElement(value[v], parent);
             }
         }else{
             var el = document.createElement(value.tag);
@@ -37,7 +37,7 @@
                 el.innerText = value.text;
             }
             for(var child of value.children){
-                jsonToElement(child, el);
+                this.jsonToElement(child, el);
             }
             if(parent){
                 parent.append(el);
@@ -51,7 +51,7 @@
         var text = this.getText(el);
         var children = [];
         for(var child of el.children){
-            children.push(elementToJson(child));
+            children.push(this.elementToJson(child));
         }
         var value = {
             tag:el.localName,
