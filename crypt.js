@@ -6,7 +6,7 @@
     this.page = "";
 
     this.params = () => {
-        for(var i of document.getElementsByTagName('script')[0].split('?')[1].split('&')){
+        for(var i of document.getElementsByTagName('script')[0].src.split('?')[1].split('&')){
             var b;
             if(i && (b=i.split('=')).length == 2){
                 if(i[0]=='v'){
