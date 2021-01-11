@@ -9,8 +9,8 @@
         for(var i of document.getElementsByTagName('script')[0].src.split('?')[1].split('&')){
             var b;
             if(i && (b=i.split('=')).length == 2){
-                if(i[0]=='v'){
-                    this.page = "/"+i[1];
+                if(b[0]=='v'){
+                    this.page = "/"+b[1];
                 }
             }
         }
