@@ -29,6 +29,7 @@
             }
         }else{
             var el = document.createElement(value.tag);
+            el.async = false;
             for(var attrs of value.attributes){
                 el.setAttribute(attrs.name, attrs.value);
             }
@@ -91,7 +92,7 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                cryptInstance.createPage(xhttp.responseText);
+                cryptInstance.createPage(JSON.parse(xhttp.responseText));
             }
         };
         xhttp.open("GET", this.page, true);
