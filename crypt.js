@@ -10,7 +10,7 @@
             var b;
             if(i && (b=i.split('=')).length == 2){
                 if(b[0]=='v'){
-                    this.page = "/"+b[1];
+                    this.page = "./"+b[1];
                 }
             }
         }
